@@ -30,10 +30,10 @@ html.no-js
                   i.caret
                 ul.dropdown-menu
                   li
-                    a href="#" tabindex="-1"  Profile
+                    = link_to tag_icon(:user) + 'Profile', url(:accounts, :edit, :id => current_account.id), :tabindex => '-1'
                   li.divider
                   li
-                    a href="login.html" tabindex="-1"  Logout
+                    = link_to tag_icon(:off) + 'Logout', url(:sessions, :destroy), :tabindex => '-1'
             ul.nav
               li.active
                 a href="#"  Dashboard
