@@ -1,12 +1,239 @@
-div class="base-text"
-  p Padrino is a ruby framework built upon the Sinatra web library
-  p It was created to make it fun and easy to code more advanced web applications while still adhering to the spirit that makes Sinatra great!
-  p Padrino comes shipped with a slick and beautiful Admin Interface, with the following features:
-
-div class="base-icons"
-  div class="btn-group"
-    div class="btn btn-primary" title="Adapters for datamapper, sequel, activerecord, minirecord, mongomapper, mongoid, couchrest" = tag_icon("cogs icon-2x", "Orm Agnostic")
-    div class="btn btn-success" title="User Authentication Support, User Authorization Management" = tag_icon("group icon-2x", "Authentication")
-    div class="btn btn-info" title="Erb, Haml, Slim Rendering Support" = tag_icon("tasks icon-2x", "Template Agnostic")
-    div class="btn btn-warning" title="English, German, Russian, Danish, French, Brazilian and Italian localizations" = tag_icon("flag icon-2x", "Multi Language")
-    div class="btn btn-danger" title="You can create a new 'admin interface' by providing a single Model" = tag_icon("magic icon-2x", "Scaffold")
+.row-fluid
+ #sidebar.span3
+   ul.nav.nav-list.bs-docs-sidenav.nav-collapse.collapse
+     li.active
+       a href="index.html" 
+         i.icon-chevron-right
+         | Dashboard
+     li
+       a href="calendar.html" 
+         i.icon-chevron-right
+         | Calendar
+     li
+       a href="stats.html" 
+         i.icon-chevron-right
+         | Statistics (Charts)
+     li
+       a href="form.html" 
+         i.icon-chevron-right
+         | Forms
+     li
+       a href="tables.html" 
+         i.icon-chevron-right
+         | Tables
+     li
+       a href="buttons.html" 
+         i.icon-chevron-right
+         | Buttons & Icons
+     li
+       a href="editors.html" 
+         i.icon-chevron-right
+         | WYSIWYG Editors
+     li
+       a href="interface.html" 
+         i.icon-chevron-right
+         | UI & Interface
+     li
+       a href="#" 
+         span.badge.badge-success.pull-right 731
+         | Orders
+     li
+       a href="#" 
+         span.badge.badge-success.pull-right 812
+         | Invoices
+     li
+       a href="#" 
+         span.badge.badge-info.pull-right 27
+         | Clients
+     li
+       a href="#" 
+         span.badge.badge-info.pull-right 1,234
+         | Users
+     li
+       a href="#" 
+         span.badge.badge-info.pull-right 2,221
+         | Messages
+     li
+       a href="#" 
+         span.badge.badge-info.pull-right 11
+         | Reports
+     li
+       a href="#" 
+         span.badge.badge-important.pull-right 83
+         | Errors
+     li
+       a href="#" 
+         span.badge.badge-warning.pull-right 4,231
+         | Logs
+ /! /span
+ #content.span9
+   .row-fluid
+     .alert.alert-success
+       button.close data-dismiss="alert" type="button"  &times;
+       h4 Success
+       | The operation completed successfully
+     .navbar
+       .navbar-inner
+         ul.breadcrumb
+           i.icon-chevron-left.hide-sidebar
+             a href="#" rel="tooltip" title=("Hide Sidebar")  &nbsp;
+           i.icon-chevron-right.show-sidebar style="display:none;" 
+             a href="#" rel="tooltip" title=("Show Sidebar")  &nbsp;
+           li
+             a href="#"  Dashboard
+             span.divider /
+           li
+             a href="#"  Settings
+             span.divider /
+           li.active Tools
+   .row-fluid
+     /! block
+     .block
+       .navbar.navbar-inner.block-header
+         .muted.pull-left Statistics
+         .pull-right
+           span.badge.badge-warning View More
+       .block-content.collapse.in
+         .span3
+           .chart data-percent="73"  73%
+           .chart-bottom-heading
+             span.label.label-info Visitors
+         .span3
+           .chart data-percent="53"  53%
+           .chart-bottom-heading
+             span.label.label-info Page Views
+         .span3
+           .chart data-percent="83"  83%
+           .chart-bottom-heading
+             span.label.label-info Users
+         .span3
+           .chart data-percent="13"  13%
+           .chart-bottom-heading
+             span.label.label-info Orders
+     /! /block
+   .row-fluid
+     .span6
+       /! block
+       .block
+         .navbar.navbar-inner.block-header
+           .muted.pull-left Users
+           .pull-right
+             span.badge.badge-info 1,234
+         .block-content.collapse.in
+           table.table.table-striped
+             thead
+               tr
+                 th #
+                 th First Name
+                 th Last Name
+                 th Username
+             tbody
+               tr
+                 td 1
+                 td Mark
+                 td Otto
+                 td @mdo
+               tr
+                 td 2
+                 td Jacob
+                 td Thornton
+                 td @fat
+               tr
+                 td 3
+                 td Vincent
+                 td Gabriel
+                 td @gabrielva
+       /! /block
+     .span6
+       /! block
+       .block
+         .navbar.navbar-inner.block-header
+           .muted.pull-left Orders
+           .pull-right
+             span.badge.badge-info 752
+         .block-content.collapse.in
+           table.table.table-striped
+             thead
+               tr
+                 th #
+                 th Product
+                 th Date
+                 th Amount
+             tbody
+               tr
+                 td 1
+                 td Coat
+                 td 02/02/2013
+                 td $25.12
+               tr
+                 td 2
+                 td Jacket
+                 td 01/02/2013
+                 td $335.00
+               tr
+                 td 3
+                 td Shoes
+                 td 01/02/2013
+                 td $29.99
+       /! /block
+   .row-fluid
+     .span6
+       /! block
+       .block
+         .navbar.navbar-inner.block-header
+           .muted.pull-left Clients
+           .pull-right
+             span.badge.badge-info 17
+         .block-content.collapse.in
+           table.table.table-striped
+             thead
+               tr
+                 th #
+                 th First Name
+                 th Last Name
+                 th Username
+             tbody
+               tr
+                 td 1
+                 td Mark
+                 td Otto
+                 td @mdo
+               tr
+                 td 2
+                 td Jacob
+                 td Thornton
+                 td @fat
+               tr
+                 td 3
+                 td Vincent
+                 td Gabriel
+                 td @gabrielva
+       /! /block
+     .span6
+       /! block
+       .block
+         .navbar.navbar-inner.block-header
+           .muted.pull-left Invoices
+           .pull-right
+             span.badge.badge-info 812
+         .block-content.collapse.in
+           table.table.table-striped
+             thead
+               tr
+                 th #
+                 th Date
+                 th Amount
+             tbody
+               tr
+                 td 1
+                 td 02/02/2013
+                 td $25.12
+               tr
+                 td 2
+                 td 01/02/2013
+                 td $335.00
+               tr
+                 td 3
+                 td 01/02/2013
+                 td $29.99
+       /! /block

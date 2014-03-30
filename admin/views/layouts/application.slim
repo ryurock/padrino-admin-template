@@ -14,17 +14,19 @@ html.no-js
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
-          a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse" 
+          a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand href="#"  Admin Panel
+          = link_to 'Padrino', url(:base, :index), :class => 'brand'
           .nav-collapse.collapse
             ul.nav.pull-right
               li.dropdown
                 a.dropdown-toggle data-toggle="dropdown" href="#" role="button" 
                   i.icon-user
-                  | Vincent Gabriel
+                  | &nbsp;
+                  = current_account.name
+                  | &nbsp;
                   i.caret
                 ul.dropdown-menu
                   li
@@ -89,245 +91,7 @@ html.no-js
                     a href="#" tabindex="-1"  Permissions
           /! /.nav-collapse
     .container-fluid
-      .row-fluid
-        #sidebar.span3
-          ul.nav.nav-list.bs-docs-sidenav.nav-collapse.collapse
-            li.active
-              a href="index.html" 
-                i.icon-chevron-right
-                | Dashboard
-            li
-              a href="calendar.html" 
-                i.icon-chevron-right
-                | Calendar
-            li
-              a href="stats.html" 
-                i.icon-chevron-right
-                | Statistics (Charts)
-            li
-              a href="form.html" 
-                i.icon-chevron-right
-                | Forms
-            li
-              a href="tables.html" 
-                i.icon-chevron-right
-                | Tables
-            li
-              a href="buttons.html" 
-                i.icon-chevron-right
-                | Buttons & Icons
-            li
-              a href="editors.html" 
-                i.icon-chevron-right
-                | WYSIWYG Editors
-            li
-              a href="interface.html" 
-                i.icon-chevron-right
-                | UI & Interface
-            li
-              a href="#" 
-                span.badge.badge-success.pull-right 731
-                | Orders
-            li
-              a href="#" 
-                span.badge.badge-success.pull-right 812
-                | Invoices
-            li
-              a href="#" 
-                span.badge.badge-info.pull-right 27
-                | Clients
-            li
-              a href="#" 
-                span.badge.badge-info.pull-right 1,234
-                | Users
-            li
-              a href="#" 
-                span.badge.badge-info.pull-right 2,221
-                | Messages
-            li
-              a href="#" 
-                span.badge.badge-info.pull-right 11
-                | Reports
-            li
-              a href="#" 
-                span.badge.badge-important.pull-right 83
-                | Errors
-            li
-              a href="#" 
-                span.badge.badge-warning.pull-right 4,231
-                | Logs
-        /! /span
-        #content.span9
-          .row-fluid
-            .alert.alert-success
-              button.close data-dismiss="alert" type="button"  &times;
-              h4 Success
-              | The operation completed successfully
-            .navbar
-              .navbar-inner
-                ul.breadcrumb
-                  i.icon-chevron-left.hide-sidebar
-                    a href="#" rel="tooltip" title=("Hide Sidebar")  &nbsp;
-                  i.icon-chevron-right.show-sidebar style="display:none;" 
-                    a href="#" rel="tooltip" title=("Show Sidebar")  &nbsp;
-                  li
-                    a href="#"  Dashboard
-                    span.divider /
-                  li
-                    a href="#"  Settings
-                    span.divider /
-                  li.active Tools
-          .row-fluid
-            /! block
-            .block
-              .navbar.navbar-inner.block-header
-                .muted.pull-left Statistics
-                .pull-right
-                  span.badge.badge-warning View More
-              .block-content.collapse.in
-                .span3
-                  .chart data-percent="73"  73%
-                  .chart-bottom-heading
-                    span.label.label-info Visitors
-                .span3
-                  .chart data-percent="53"  53%
-                  .chart-bottom-heading
-                    span.label.label-info Page Views
-                .span3
-                  .chart data-percent="83"  83%
-                  .chart-bottom-heading
-                    span.label.label-info Users
-                .span3
-                  .chart data-percent="13"  13%
-                  .chart-bottom-heading
-                    span.label.label-info Orders
-            /! /block
-          .row-fluid
-            .span6
-              /! block
-              .block
-                .navbar.navbar-inner.block-header
-                  .muted.pull-left Users
-                  .pull-right
-                    span.badge.badge-info 1,234
-                .block-content.collapse.in
-                  table.table.table-striped
-                    thead
-                      tr
-                        th #
-                        th First Name
-                        th Last Name
-                        th Username
-                    tbody
-                      tr
-                        td 1
-                        td Mark
-                        td Otto
-                        td @mdo
-                      tr
-                        td 2
-                        td Jacob
-                        td Thornton
-                        td @fat
-                      tr
-                        td 3
-                        td Vincent
-                        td Gabriel
-                        td @gabrielva
-              /! /block
-            .span6
-              /! block
-              .block
-                .navbar.navbar-inner.block-header
-                  .muted.pull-left Orders
-                  .pull-right
-                    span.badge.badge-info 752
-                .block-content.collapse.in
-                  table.table.table-striped
-                    thead
-                      tr
-                        th #
-                        th Product
-                        th Date
-                        th Amount
-                    tbody
-                      tr
-                        td 1
-                        td Coat
-                        td 02/02/2013
-                        td $25.12
-                      tr
-                        td 2
-                        td Jacket
-                        td 01/02/2013
-                        td $335.00
-                      tr
-                        td 3
-                        td Shoes
-                        td 01/02/2013
-                        td $29.99
-              /! /block
-          .row-fluid
-            .span6
-              /! block
-              .block
-                .navbar.navbar-inner.block-header
-                  .muted.pull-left Clients
-                  .pull-right
-                    span.badge.badge-info 17
-                .block-content.collapse.in
-                  table.table.table-striped
-                    thead
-                      tr
-                        th #
-                        th First Name
-                        th Last Name
-                        th Username
-                    tbody
-                      tr
-                        td 1
-                        td Mark
-                        td Otto
-                        td @mdo
-                      tr
-                        td 2
-                        td Jacob
-                        td Thornton
-                        td @fat
-                      tr
-                        td 3
-                        td Vincent
-                        td Gabriel
-                        td @gabrielva
-              /! /block
-            .span6
-              /! block
-              .block
-                .navbar.navbar-inner.block-header
-                  .muted.pull-left Invoices
-                  .pull-right
-                    span.badge.badge-info 812
-                .block-content.collapse.in
-                  table.table.table-striped
-                    thead
-                      tr
-                        th #
-                        th Date
-                        th Amount
-                    tbody
-                      tr
-                        td 1
-                        td 02/02/2013
-                        td $25.12
-                      tr
-                        td 2
-                        td 01/02/2013
-                        td $335.00
-                      tr
-                        td 3
-                        td 01/02/2013
-                        td $29.99
-              /! /block
+      = yield
       hr
         footer
           p &copy; Vincent Gabriel 2013
