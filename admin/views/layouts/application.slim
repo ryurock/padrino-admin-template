@@ -35,61 +35,15 @@ html.no-js
                   li
                     = link_to tag_icon(:off) + 'Logout', url(:sessions, :destroy), :tabindex => '-1'
             ul.nav
-              li.active
-                a href="#"  Dashboard
-              li.dropdown
-                a.dropdown-toggle data-toggle="dropdown" href="#" 
-                  | Settings
+              li class=('active' if request.path == '/admin/')
+                = link_to "Dashboard", url(:base, :index)
+              li class=("dropdown #{'active' if request.path_info =~ /^\/accounts/}")
+                a.dropdown-toggle data-toggle="dropdown" href="#"
+                  | Accounts &nbsp;
                   b.caret
-                ul#menu1.dropdown-menu
-                  li
-                    a href="#" 
-                      | Tools
-                      i.icon-arrow-right
-                    ul.dropdown-menu.sub-menu
-                      li
-                        a href="#"  Reports
-                      li
-                        a href="#"  Logs
-                      li
-                        a href="#"  Errors
-                  li
-                    a href="#"  SEO Settings
-                  li
-                    a href="#"  Other Link
-                  li.divider
-                  li
-                    a href="#"  Other Link
-                  li
-                    a href="#"  Other Link
-              li.dropdown
-                a.dropdown-toggle data-toggle="dropdown" href="#" role="button" 
-                  | Content
-                  i.caret
                 ul.dropdown-menu
                   li
-                    a href="#" tabindex="-1"  Blog
-                  li
-                    a href="#" tabindex="-1"  News
-                  li
-                    a href="#" tabindex="-1"  Custom Pages
-                  li
-                    a href="#" tabindex="-1"  Calendar
-                  li.divider
-                  li
-                    a href="#" tabindex="-1"  FAQ
-              li.dropdown
-                a.dropdown-toggle data-toggle="dropdown" href="#" role="button" 
-                  | Users
-                  i.caret
-                ul.dropdown-menu
-                  li
-                    a href="#" tabindex="-1"  User List
-                  li
-                    a href="#" tabindex="-1"  Search
-                  li
-                    a href="#" tabindex="-1"  Permissions
-          /! /.nav-collapse
+                    = link_to tag_icon(:list) + 'List', url(:accounts, :index)
     .container-fluid
       = yield
       hr
